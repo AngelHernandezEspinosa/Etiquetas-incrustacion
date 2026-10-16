@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contenido</title>
+
+    <style>
+        body {
+            font-family: system-ui, sans-serif;
+            margin: 0;
+            padding: 2rem;
+            background-color: #f3f4f6;
+            color: #1f2937;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        nav {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        nav a {
+            color: #2563eb;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .card {
+            background-color: white;
+            border: 2px solid #4078f2;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .card:nth-of-type(3n+2) {
+            border-color: #d97706;
+        }
+
+        .card:nth-of-type(3n+3) {
+            border-color: #059669;
+        }
+
+        img,
+        iframe,
+        embed,
+        object,
+        video,
+        audio,
+        canvas {
+            max-width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">Volver a inicio</a>
+    </nav>
+
+    <h2 id="contenido">Contenido multimedia</h2>
+
+    <article class="card">
+        <h3>Imagen de la autoescuela con img</h3>
+        <img src="autoescuela.jpg" alt="Coche de autoescuela" width="400">
+    </article>
+
+    <article class="card">
+        <h3>Página web externa con iframe</h3>
+        <iframe src="https://autoescuela.com/" title="Ejemplo de autoescuela" width="500" height="300">
+        </iframe>
+    </article>
+
+    <article class="card">
+        <h3>Documento PDF con embed</h3>
+        <embed src="tema1.pdf" type="application/pdf" width="500" height="300">
+    </article>
+
+    <article class="card">
+        <h3>Documento PDF con object</h3>
+        <object data="tema1.pdf" type="application/pdf" width="500" height="300">
+            <p>No se puede visualizar el PDF.</p>
+        </object>
+    </article>
+
+    <article class="card">
+        <h3>Vídeo de cronometro para sacarte el carnet con video y source</h3>
+        <video controls width="400">
+            <source src="video.mp4" type="video/mp4">
+            Tu navegador no soporta vídeo.
+        </video>
+    </article>
+
+    <article class="card">
+        <h3>Audio de musica para estudiar el temario con audio</h3>
+        <audio controls src="audio.mp3">
+            Tu navegador no soporta audio.
+        </audio>
+    </article>
+
+    <article class="card">
+        <h3>Área para dibujar con JavaScript con canvas</h3>
+        <p>Tener en cuenta que para que funcione hace falta js que tendrá este código</p>
+        <canvas id="miCanvas" width="300" height="150">
+            Tu navegador no soporta canvas.
+        </canvas>
+    </article>
+
+    <article class="card">
+        <h3>Señal de tráfico con SVG</h3>
+        <svg width="150" height="150" viewBox="0 0 150 150">
+            <circle cx="75" cy="75" r="65" fill="white" stroke="red" stroke-width="10" />
+            <text x="75" y="90" font-size="40" text-anchor="middle">50</text>
+        </svg>
+    </article>
+
+
+    <script>
+        // Este script es sacado de internet para probar, la única forma de hacer funcionar un Canva.
+        const canvas = document.getElementById("miCanvas");
+        const ctx = canvas.getContext("2d");
+
+        ctx.fillStyle = "#dbeafe";
+        ctx.fillRect(0, 0, 300, 150);
+
+        ctx.fillStyle = "#555555";
+        ctx.fillRect(0, 100, 300, 50);
+
+        ctx.fillStyle = "white";
+        ctx.fillRect(20, 123, 45, 4);
+        ctx.fillRect(95, 123, 45, 4);
+        ctx.fillRect(170, 123, 45, 4);
+        ctx.fillRect(245, 123, 35, 4);
+
+        ctx.fillStyle = "#2563eb";
+        ctx.fillRect(85, 65, 130, 40);
+
+        ctx.fillStyle = "#1d4ed8";
+        ctx.fillRect(115, 45, 70, 25);
+
+        ctx.fillStyle = "#bfdbfe";
+        ctx.fillRect(120, 50, 25, 18);
+        ctx.fillRect(152, 50, 28, 18);
+
+        ctx.fillStyle = "black";
+        ctx.beginPath();
+        ctx.arc(115, 105, 13, 0, 2 * Math.PI);
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(185, 105, 13, 0, 2 * Math.PI);
+        ctx.fill();
+
+        ctx.fillStyle = "white";
+        ctx.font = "bold 16px Arial";
+        ctx.fillText("AHE", 135, 93);
+    </script>
+
+</body>
+
+</html>
